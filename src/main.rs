@@ -46,7 +46,7 @@ impl Sandbox for MainScreen {
     type Message = Message;
 
     fn new() -> Self {
-        let config = devices::Configuration::from("/Users/julian/Documents/Git/instrument-app/config/DG1022Z.toml").unwrap();
+        let config = devices::Configuration::from("/Users/julian/Documents/Git/instrument-app/config/config.toml").unwrap();
         Self {
             command_screen: CommandScreen::from(config),
             settings_screen: SettingsScreen::default(),
@@ -94,8 +94,9 @@ impl Sandbox for MainScreen {
             .into()
     }
 
+    /// Set the scaling factor, higher number corresponds to "zooming in" on the widgets
     fn scale_factor(&self) -> f64 {
-        2.0
+        1.0
     }
 }
 

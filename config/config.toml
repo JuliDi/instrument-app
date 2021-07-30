@@ -1,3 +1,4 @@
+# Sample config for DG1022Z
 [device]
 address = "10.10.2.8:5555"
 channels = 2
