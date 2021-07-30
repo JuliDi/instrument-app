@@ -1,5 +1,5 @@
 # instrument-app
-
+[![Rust](https://github.com/JuliDi/instrument-app/actions/workflows/rust.yml/badge.svg?branch=master)](https://github.com/JuliDi/instrument-app/actions/workflows/rust.yml)
 ## Summary
 Extensible cross-platform GUI application for controlling lab instruments over the network using SCPI commands.
 
