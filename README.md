@@ -15,6 +15,8 @@ Extensible cross-platform GUI application for controlling lab instruments over t
 3. Run `$ cargo run` to start the application
 4. Connect to your device by entering its IP-address and the port (often `5555`)
 
+## Documentation
+Available via `$ cargo doc --no-deps --open`.
 
 ## License
 MIT, see [LICENSE](LICENSE)
