@@ -30,7 +30,6 @@ jobs:
           export DEBIAN_FRONTED=noninteractive
           sudo apt-get -qq update
           sudo apt-get install -y libxkbcommon-dev
-      - name: Run tests
+      - name: Build app
         run: |
-          cargo test --verbose --all
-          cargo test --verbose --all --all-features
+          cargo build
