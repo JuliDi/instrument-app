@@ -1,0 +1,60 @@
+[device]
+address = "10.10.2.8:5555"
+channels = 2
+
+
+[[commands]]
+channel = true
+freetext = 0
+name = "Impedance"
+scpi = ":OUTPut<CH>:IMPedance:"
+values = [" <TXT>", "INFinity", "MINimum", "MAXimum"]
+
+[[commands]]
+channel = true
+name = "Polarity"
+scpi = "OUTPut<CH>:POLarity:"
+values = ["NORMal", "INVerted"]
+
+[[commands]]
+channel = true
+name = "Output"
+scpi = ":OUTPut<CH> "
+values = ["on", "off"]
+
+[[commands]]
+channel = true
+name = "Apply"
+scpi = ":SOURce<CH>:APPLy:"
+values = ["ARBitrary", "DC", "HARmonic", "NOISe", "PULSe", "RAMP",
+    "SINusoid", "SQUare", "TRIangle", "USER"]
+
+[[commands]]
+channel = true
+name = "Frequency"
+scpi = ":SOURce<CH>:FREQ"
+values = [" <TXT>", "?", ":CENTer <TXT>", ":SPAN <TXT>", ":STARt <TXT>", ":STOP <TXT>"]
+
+[[commands]]
+channel = true
+name = "Voltage"
+scpi = ":SOURce<CH>:VOLTage"
+values = [" <TXT>", ":HIGH <TXT>", ":LOW <TXT>", ":OFFSet <TXT>"]
+
+[[commands]]
+channel = false
+name = "Beeper"
+scpi = ":SYSTem:BEEPer:"
+values = ["IMMediate", "STATe?", "STATe <TXT>"]
+
+[[commands]]
+channel = false
+name = "Get and Clear Errors"
+scpi = ":SYSTem:ERRor"
+values = ["?"]
+
+[[commands]]
+channel = false
+name = "Clear"
+scpi = "*CLS"
+values = [""]
