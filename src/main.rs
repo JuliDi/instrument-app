@@ -47,6 +47,11 @@ impl Sandbox for MainScreen {
 
     fn new() -> Self {
         let args: Vec<String> = std::env::args().collect();
+        if args.len() < 2 {
+            eprintln!("Error: Please specify a config file as the first argument!");
+            std::process::exit(-1);
+        }
+
         let config = devices::Configuration::from(&args[1]).unwrap();
         Self {
             command_screen: CommandScreen::from(config),
