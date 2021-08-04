@@ -46,7 +46,8 @@ impl Sandbox for MainScreen {
     type Message = Message;
 
     fn new() -> Self {
-        let config = devices::Configuration::from("/Users/julian/Documents/Git/instrument-app/config/config.toml").unwrap();
+        let args: Vec<String> = std::env::args().collect();
+        let config = devices::Configuration::from(&args[1]).unwrap();
         Self {
             command_screen: CommandScreen::from(config),
             settings_screen: SettingsScreen::default(),

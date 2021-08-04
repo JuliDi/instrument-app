@@ -16,7 +16,7 @@ impl DeviceConnection {
     /// Connect to a device listening on `address`
     pub fn connect(&mut self, address: &SocketAddr) -> Result<(), std::io::Error> {
         // Attempt connection
-        match TcpStream::connect_timeout(address, Duration::from_secs(2)) {
+        match TcpStream::connect_timeout(address, Duration::from_secs(1)) {
             Ok(stream) => {
                 stream.set_read_timeout(Some(Duration::from_secs(1))).expect("Could not set a read timeout");
                 self.stream = Some(stream);
