@@ -25,8 +25,7 @@ mod tests {
             values: vec!["on".into(), "off".into()]
         };
 
-        let res = make_scpi_command(cmd, 1, "on".into());
-        println!("{}", res.unwrap());
-
+        let res = make_scpi_command(cmd, 1, "on".into(), "");
+        assert_eq!(res.unwrap(), "OUT1 on\n".to_string())
     }
 }

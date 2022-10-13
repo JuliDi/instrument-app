@@ -7,7 +7,7 @@ mod screens;
 
 type ScpiCommand = crate::devices::Command;
 
-use iced::{Align, Column, Container, Element, Settings, Sandbox, window};
+use iced::{Column, Container, Element, Settings, Sandbox, window, alignment};
 use crate::{
     screens::toolbar::ToolBar,
     screens::settings::SettingsScreen,
@@ -90,7 +90,7 @@ impl Sandbox for MainScreen {
             Column::new()
                 .padding(8)
                 .spacing(8)
-                .align_items(Align::Center)
+                .align_items(alignment::Alignment::Center)
                 .push(self.toolbar.view(&self.current_screen))
                 .push(match &self.current_screen {
                     ScreenType::Settings => self.settings_screen.view(),

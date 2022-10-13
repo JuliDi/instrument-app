@@ -1,7 +1,7 @@
 //! Provides a settings screen to define connection parameters and connect to the device
 
 use crate::{styles::{self, ui_button}, messages::*, networking::DeviceConnection};
-use iced::{Container, Text, text_input, button, Length, Align, TextInput, Color, Column};
+use iced::{Container, Text, text_input, button, Length, alignment::Alignment, TextInput, Color, Column};
 use std::{ops::Add, net::{SocketAddr}};
 
 /// Textfield and button states held by the settings screen
@@ -66,7 +66,7 @@ impl SettingsScreen {
         // Put everything together in a container and add some info text
         Container::new(
             Column::new()
-                .align_items(Align::Center)
+                .align_items(Alignment::Center)
                 .push(Text::new(&self.connection_status_text).color(Color::BLACK).width(Length::Shrink))
                 .spacing(20)
                 .push(ti_ip_address)

@@ -1,5 +1,5 @@
 use crate::{styles::{self, ui_button}, ScpiCommand, devices, messages::{*, CommandMessage::*}};
-use iced::{Container, Text, button, Length, Align, Row, Column, PickList, pick_list, TextInput, text_input};
+use iced::{Container, Text, button, Length, alignment::Alignment, Row, Column, PickList, pick_list, TextInput, text_input};
 
 /// Textfield, button and dropdown states held by the settings screen
 #[derive(Default)]
@@ -86,7 +86,7 @@ impl CommandScreen {
         // Build the container from the above widgets and add the appropriate dropdown menus
         Container::new(
             Column::new()
-                .align_items(Align::Center)
+                .align_items(Alignment::Center)
                 .push(status_text)
                 .spacing(20)
                 .push(command_text)

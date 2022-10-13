@@ -1,5 +1,5 @@
 //! Provides a toolbar for navigating the application
-use iced::{button, Button, Container, Row, Text, Length, Align, Column, Rule};
+use iced::{button, Button, Container, Row, Text, Length, alignment::{Alignment, Horizontal, Vertical}, Column, Rule};
 
 use crate::messages::*;
 use crate::styles;
@@ -18,7 +18,7 @@ impl ToolBar {
 
         Container::new(Column::new().push(
             Row::new()
-                .align_items(Align::Center)
+                .align_items(Alignment::Center)
                 .spacing(24)
                 .push(
                     Button::new(&mut self.command_button_state, Text::new("Command"))
@@ -39,11 +39,11 @@ impl ToolBar {
         )
             .push(Rule::horizontal(20))
             .width(Length::Fill)
-            .align_items(Align::Center)
+            .align_items(Alignment::Center)
         )
-            .align_x(Align::Center)
+            .align_x(Horizontal::Center)
             //.style(styles::Container::Basic)
-            .align_y(Align::Start)
+            .align_y(Vertical::Top)
             .width(Length::Fill)
             .padding(4)
     }

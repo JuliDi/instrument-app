@@ -1,6 +1,6 @@
 //! Provides styles for [`button`]s and [`text_input`]s
 
-use iced::{button, button::State, Background, Color, Vector, Text, HorizontalAlignment, text_input, text_input::Style};
+use iced::{button, button::State, Background, Color, Vector, Text, text_input, text_input::Style, alignment};
 use crate::Message;
 
 pub const GREEN_LIGHT: Color = Color { r: 0.08, g: 0.7, b: 0.16, a: 1.0 };
@@ -31,9 +31,9 @@ pub fn ui_button(state: &mut State, label: String, style: Button) -> iced::Butto
     iced::Button::new(
         state,
         Text::new(label)
-            .horizontal_alignment(HorizontalAlignment::Center),
+            .horizontal_alignment(alignment::Horizontal::Center),
     )
-        .min_width(80)
+        .width(80.into())
         .padding(10)
         .style(style)
 }
